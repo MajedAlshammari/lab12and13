@@ -69,7 +69,7 @@ def queues_create():
 	conn = get_conn()
 	body = request.get_json(force=True)
 	name = body['name']
-	queue = conn.create_queue(name, 120)
+	queue = conn.create_queue(name)
 	resp = "Queue "+name+" has been created\n"
 	return Response(response=resp, mimetype="application/json")
 
